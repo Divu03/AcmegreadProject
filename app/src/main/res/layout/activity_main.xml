@@ -28,7 +28,7 @@
         android:layout_marginTop="516dp"
         android:backgroundTint="@color/orange"
         android:text="@string/start"
-        android:textSize="27sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="592dp"
         android:backgroundTint="@color/purple_700"
         android:text="@string/about"
-        android:textSize="27sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,10 +49,10 @@
         android:layout_width="210dp"
         android:layout_height="50dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="380dp"
         android:hint="@string/editTextName"
-        android:textColorHint="@color/whiteoff"
         android:textColor="@color/white"
+        android:textColorHint="@color/whiteoff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

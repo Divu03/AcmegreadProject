@@ -3,5 +3,8 @@
     <string name="about">ABOUT</string>
     <string name="start">START</string>
     <string name="editTextName">Enter your name</string>
-
+    <string name="dName">Divyesh Kuchhadia</string>
+    <string name="dEmail">divyeshkuchhadia@gamil.com</string>
+    <string name="developer">Developer</string>
+    <string name="back">Back</string>
 </resources>
