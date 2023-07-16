@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/questionchalkm">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -51,8 +50,8 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="380dp"
         android:hint="@string/editTextName"
-        android:textColor="@color/white"
-        android:textColorHint="@color/whiteoff"
+        android:textColor="@color/orange"
+        android:textColorHint="@color/blackoff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:inputType="text"
