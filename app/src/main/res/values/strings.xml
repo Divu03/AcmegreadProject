@@ -12,4 +12,5 @@
     <string name="nq">Next Question</string>
     <string name="quit">Quit</string>
     <string name="yscore">Your Score</string>
+    <string name="restart">Restart</string>
 </resources>

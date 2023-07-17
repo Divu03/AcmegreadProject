@@ -13,5 +13,8 @@
     <color name="whiteoff">#99FFFFFF</color>
     <color name="blackoff">#99333333</color>
     <color name="orange">#FFDF7924</color>
-    <color name="titleo">#FFC107</color>
+    <color name="titleo">#FFFFC107</color>
+    <color name="yellow">#FFFFEB3B</color>
+    <color name="lightgreen">#CDDC39</color>
+    <color name="violet">#FF7921B1</color>
 </resources>

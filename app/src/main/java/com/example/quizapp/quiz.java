@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -80,9 +81,7 @@ public class quiz extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "wrong", Toast.LENGTH_SHORT).show();
                 }
                 flag++;
-                if (s != null){
-                    s.setText(correct);
-                }
+                s.setText(String.valueOf(correct));
                 if(flag<question.length){
                     qt.setText(question[flag]);
                     rb1.setText(opt[flag*4]);
@@ -90,16 +89,19 @@ public class quiz extends AppCompatActivity {
                     rb3.setText(opt[flag*4 +2]);
                     rb4.setText(opt[flag*4 +3]);
                 }
-                else{
+                if(flag == question.length){
                     marks=correct;
                     Intent inte = new Intent(getApplicationContext(), result.class);
                     startActivity(inte);
                     inte.putExtra("cor",correct);
+                    Log.d("value else ",String.valueOf(marks));
                     inte.putExtra("wro",wrong);
+                    Log.d("value else ",String.valueOf(wrong));
                 }
                 rg.clearCheck();
             }
         });
+
         qb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
