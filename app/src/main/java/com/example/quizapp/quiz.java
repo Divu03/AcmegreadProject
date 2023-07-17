@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -42,21 +40,21 @@ public class quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        score = (TextView)findViewById(R.id.yscore);
-        s = (TextView)findViewById(R.id.score);
-        nametv = (TextView)findViewById(R.id.textView10);
+        score = findViewById(R.id.yscore);
+        s = findViewById(R.id.score);
+        nametv = findViewById(R.id.textView10);
 
         String namepq = "Hello " + getIntent().getStringExtra("namep");
         nametv.setText(namepq);
 
-        rg = (RadioGroup)findViewById(R.id.rg);
-        rb1 = (RadioButton)findViewById(R.id.radio1);
-        rb2 = (RadioButton)findViewById(R.id.radio2);
-        rb3 = (RadioButton)findViewById(R.id.radio3);
-        rb4 = (RadioButton)findViewById(R.id.radio4);
-        nb = (Button)findViewById(R.id.nqb);
-        qb = (Button)findViewById(R.id.qb);
-        qt = (TextView)findViewById(R.id.tquesion);
+        rg = findViewById(R.id.rg);
+        rb1 = findViewById(R.id.radio1);
+        rb2 = findViewById(R.id.radio2);
+        rb3 = findViewById(R.id.radio3);
+        rb4 = findViewById(R.id.radio4);
+        nb = findViewById(R.id.nqb);
+        qb = findViewById(R.id.qb);
+        qt = findViewById(R.id.tquesion);
 
         qt.setText(question[flag]);
         rb1.setText(opt[0]);
@@ -70,7 +68,7 @@ public class quiz extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Please select one choice",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                RadioButton ansrb=(RadioButton)findViewById(rg.getCheckedRadioButtonId());
+                RadioButton ansrb= findViewById(rg.getCheckedRadioButtonId());
                 String at=ansrb.getText().toString();
                 if(at.equals(ans[flag])){
                     correct++;
@@ -104,7 +102,7 @@ public class quiz extends AppCompatActivity {
         qb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RadioButton ansrq=(RadioButton)findViewById(rg.getCheckedRadioButtonId());
+                RadioButton ansrq= findViewById(rg.getCheckedRadioButtonId());
                 String aq=ansrq.getText().toString();
                 if(aq.equals(ans[flag])){
                     correct++;

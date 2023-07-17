@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        about = (Button)findViewById(R.id.aboutButton);
-        start = (Button)findViewById(R.id.startButton);
-        name = (EditText)findViewById(R.id.enterName);
+        about = findViewById(R.id.aboutButton);
+        start = findViewById(R.id.startButton);
+        name = findViewById(R.id.enterName);
         about.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

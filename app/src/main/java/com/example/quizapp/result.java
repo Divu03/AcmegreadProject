@@ -16,21 +16,21 @@ public class result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        c = (TextView)findViewById(R.id.ca);
+        c = findViewById(R.id.ca);
         int correct = getIntent().getIntExtra("cor",0);
         String cans = "Correct Answers: " + correct;
         c.setText(cans);
 
-        w = (TextView)findViewById(R.id.wa);
+        w = findViewById(R.id.wa);
         int wrong = getIntent().getIntExtra("wro",0);
         String wans = "Wrong Answers: " + wrong;
         w.setText(wans);
 
-        f = (TextView)findViewById(R.id.fs);
+        f = findViewById(R.id.fs);
         String fs = "Final Score: " + correct;
         f.setText(fs);
 
-        rs = (Button)findViewById(R.id.restart);
+        rs = findViewById(R.id.restart);
         rs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
