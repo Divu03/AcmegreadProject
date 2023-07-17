@@ -22,7 +22,7 @@ public class result extends AppCompatActivity {
         c.setText(cans);
 
         w = (TextView)findViewById(R.id.wa);
-        int wrong = getIntent().getIntExtra("cor",0);
+        int wrong = getIntent().getIntExtra("wro",0);
         String wans = "Wrong Answers: " + wrong;
         w.setText(wans);
 

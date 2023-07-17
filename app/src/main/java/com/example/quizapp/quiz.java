@@ -92,11 +92,12 @@ public class quiz extends AppCompatActivity {
                 if(flag == question.length){
                     marks=correct;
                     Intent inte = new Intent(getApplicationContext(), result.class);
-                    startActivity(inte);
+
                     inte.putExtra("cor",correct);
                     Log.d("value else ",String.valueOf(marks));
                     inte.putExtra("wro",wrong);
                     Log.d("value else ",String.valueOf(wrong));
+                    startActivity(inte);
                 }
                 rg.clearCheck();
             }
