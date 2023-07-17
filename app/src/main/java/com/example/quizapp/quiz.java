@@ -35,7 +35,7 @@ public class quiz extends AppCompatActivity {
             "main method", "this","public","import pkg.*","None of the mentioned"
     };
     int flag = 0;
-    public int marks=0,correct=0,wrong=0;
+    public int marks=0,correct=0,wrong=5;
     TextView nametv,score,qt,s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,10 +74,10 @@ public class quiz extends AppCompatActivity {
                 String at=ansrb.getText().toString();
                 if(at.equals(ans[flag])){
                     correct++;
+                    wrong -= 1;
                     Toast.makeText(getApplicationContext(),"Correct",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    wrong++;
                     Toast.makeText(getApplicationContext(), "wrong", Toast.LENGTH_SHORT).show();
                 }
                 flag++;
@@ -92,11 +92,10 @@ public class quiz extends AppCompatActivity {
                 if(flag == question.length){
                     marks=correct;
                     Intent inte = new Intent(getApplicationContext(), result.class);
-                    startActivity(inte);
+
                     inte.putExtra("cor",correct);
-                    Log.d("value else ",String.valueOf(marks));
                     inte.putExtra("wro",wrong);
-                    Log.d("value else ",String.valueOf(wrong));
+                    startActivity(inte);
                 }
                 rg.clearCheck();
             }
@@ -105,10 +104,18 @@ public class quiz extends AppCompatActivity {
         qb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RadioButton ansrq=(RadioButton)findViewById(rg.getCheckedRadioButtonId());
+                String aq=ansrq.getText().toString();
+                if(aq.equals(ans[flag])){
+                    correct++;
+                    wrong -= 1;
+                }
+                flag++;
+                s.setText(String.valueOf(correct));
                 Intent inte2 = new Intent(getApplicationContext(), result.class);
-                startActivity(inte2);
                 inte2.putExtra("cor",correct);
                 inte2.putExtra("wro",wrong);
+                startActivity(inte2);
             }
         });
     }
