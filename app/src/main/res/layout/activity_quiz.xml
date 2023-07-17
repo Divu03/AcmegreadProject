@@ -7,42 +7,44 @@
     tools:context=".quiz">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/yscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="695dp"
+        android:layout_marginTop="690dp"
         android:text="@string/yscore"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="330dp"
-        android:layout_marginTop="696dp"
-        android:text="TextView"
+        android:layout_marginStart="365dp"
+        android:layout_marginTop="690dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="596dp"
-        android:text="Button"
+        android:id="@+id/qb"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="576dp"
+        android:text="@string/quit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="516dp"
-        android:text="Button"
+        android:id="@+id/nqb"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="506dp"
+        android:text="@string/nq"
+        android:backgroundTint="@color/orange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,50 +55,47 @@
         android:layout_marginStart="27dp"
         android:layout_marginTop="19dp"
         android:textSize="20sp"
-        android:text="dfgdrg"
         android:textColor="@color/greylittle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tquesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="151dp"
-        android:text="TextView"
+        android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
+        android:id="@+id/rg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="210dp">
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="265dp">
 
         <RadioButton
             android:id="@+id/radio1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/developer" />
+            android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/radio2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/back"/>
+            android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/radio3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"/>
+            android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/radio4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dName"/>
+            android:layout_height="wrap_content"/>
     </RadioGroup>
 
 
