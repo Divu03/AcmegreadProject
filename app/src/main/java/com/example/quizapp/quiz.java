@@ -103,12 +103,14 @@ public class quiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RadioButton ansrq= findViewById(rg.getCheckedRadioButtonId());
-                String aq=ansrq.getText().toString();
-                if(aq.equals(ans[flag])){
-                    correct++;
-                    wrong -= 1;
+                if(rg.getCheckedRadioButtonId() != -1) {
+                    String aq = ansrq.getText().toString();
+                    if (aq.equals(ans[flag])) {
+                        correct++;
+                        wrong -= 1;
+                    }
+                    flag++;
                 }
-                flag++;
                 s.setText(String.valueOf(correct));
                 Intent inte2 = new Intent(getApplicationContext(), result.class);
                 inte2.putExtra("cor",correct);
