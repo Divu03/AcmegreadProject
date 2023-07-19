@@ -34,7 +34,7 @@ public class result extends AppCompatActivity {
         rs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ints = new Intent(getApplicationContext(), quiz.class);
+                Intent ints = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(ints);
             }
         });
