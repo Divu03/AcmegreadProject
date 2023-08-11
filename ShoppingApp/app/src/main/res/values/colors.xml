@@ -17,4 +17,5 @@
     <color name="yellow">#FFFFEB3B</color>
     <color name="lightgreen">#CDDC39</color>
     <color name="violet">#FF7921B1</color>
+    <color name="background_final">#60CBC3</color>
 </resources>
