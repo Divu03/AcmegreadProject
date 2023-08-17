@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shopping</string>
+    <string name="ename">Name</string>
+    <string name="eemail">Email</string>
+    <string name="epassword">Password</string>
+    <string name="eConfirmPassword">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="login">Already have an account?</string>
+    <string name="intro">Here\'s \nyour first \nstep with \nus!</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="loginb">Login</string>
+    <string name="registert">New user? Register Now</string>
+</resources>
