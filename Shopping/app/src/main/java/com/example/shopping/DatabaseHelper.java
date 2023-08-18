@@ -132,4 +132,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+    @SuppressLint("Range")
+    public User getUser(String email){
+
+        User user = new User();
+        String[] columns={
+            COLUMN_USER_EMAIL,COLUMN_USER_NAME
+        };
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = COLUMN_USER_EMAIL + " = ?";
+        String[] selectionArgs = {email};
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,null,null);
+        if(cursor.moveToNext()){
+                user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+                user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+                return user;
+        }
+        cursor.close();
+        db.close();
+        User notfound = new User();
+        notfound.setEmail("Not");
+        notfound.setName("Not");
+        return notfound;
+    }
 }

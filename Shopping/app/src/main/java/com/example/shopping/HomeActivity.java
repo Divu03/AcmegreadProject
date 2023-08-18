@@ -1,11 +1,14 @@
 package com.example.shopping;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -17,11 +20,18 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout drawer;
+    User user;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +56,22 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+//        DatabaseHelper db = new DatabaseHelper(HomeActivity.this);
+//
+//        String emailGet = getIntent().getStringExtra("Email");
+//        user = db.getUser(emailGet);
+//
+//        TextView emailH = findViewById(R.id.emailHeader);
+//        TextView nameH = findViewById(R.id.usernameHeader);
+//
+//        if (user != null && !user.getEmail().equals("Not")) {
+//            emailH.setText(user.getEmail());
+//            nameH.setText(user.getName());
+//        } else {
+//            emailH.setText("User not found");
+//            nameH.setText("Unknown User");
+//        }
     }
 
     @Override
