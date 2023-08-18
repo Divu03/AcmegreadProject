@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 if(dbh.checkUserLogin(email.getText().toString().trim(),pass.getText().toString().trim())){
-                    Intent acIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent acIntent = new Intent(LoginActivity.this, HomeActivity.class);
                     acIntent.putExtra("Email",email.getText().toString().trim());
                     startActivity(acIntent);
                 }
