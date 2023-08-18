@@ -73,16 +73,13 @@ public class HomeActivity extends AppCompatActivity {
             navController.navigate(R.id.nav_cart);
         } else if (id == R.id.signout) {
             Toast.makeText(HomeActivity.this, "Signing out...", Toast.LENGTH_SHORT).show();
-            signOut();
+            Intent loIntent = new Intent(HomeActivity.this, MainActivity.class);
+            loIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(loIntent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-    private void signOut() {
-        Intent loIntent = new Intent(HomeActivity.this, MainActivity.class);
-        loIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(loIntent);
     }
 }
