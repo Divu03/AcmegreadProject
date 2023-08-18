@@ -65,13 +65,14 @@ public class HomeActivity extends AppCompatActivity {
 //        TextView emailH = findViewById(R.id.emailHeader);
 //        TextView nameH = findViewById(R.id.usernameHeader);
 //
-//        if (user != null && !user.getEmail().equals("Not")) {
+//        if (user != null ) {
 //            emailH.setText(user.getEmail());
 //            nameH.setText(user.getName());
 //        } else {
 //            emailH.setText("User not found");
 //            nameH.setText("Unknown User");
 //        }
+//        db.close();
     }
 
     @Override

@@ -150,13 +150,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(cursor.moveToNext()){
                 user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
                 user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+                user.setId(0);
+                user.setPassword("0");
                 return user;
+        }else{
+            User notfound = new User();
+            notfound.setEmail("Not");
+            notfound.setName("Not");
+            return notfound;
         }
-        cursor.close();
-        db.close();
-        User notfound = new User();
-        notfound.setEmail("Not");
-        notfound.setName("Not");
-        return notfound;
     }
 }
