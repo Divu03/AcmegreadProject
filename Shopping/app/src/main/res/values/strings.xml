@@ -31,4 +31,14 @@
     <string name="mobile">Mobile</string>
     <string name="uname">App User</string>
     <string name="acInfo">Account Info</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_description">Product Description</string>
+    <string name="price">Price 10</string>
+    <string name="remove">Remove</string>
+    <string name="order">Order</string>
+    <string name="YourAddedItem">Your Added Item</string>
+    <string name="price_format">Price: ₹%.2f</string>
+
+
 </resources>

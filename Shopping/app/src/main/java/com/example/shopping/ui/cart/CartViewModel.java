@@ -4,16 +4,29 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.shopping.Product;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CartViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private MutableLiveData<List<Product>> cartItems = new MutableLiveData<>(new ArrayList<>());
 
-    public CartViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+    public LiveData<List<Product>> getCartItems() {
+        return cartItems;
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void addToCart(Product product) {
+        List<Product> currentItems = cartItems.getValue();
+        if (currentItems != null && !product.isInCart()) {
+            currentItems.add(product);
+            cartItems.setValue(currentItems);
+            product.setInCart(true);
+        }
+    }
+
+    public void clearCart() {
+        cartItems.setValue(new ArrayList<>());
     }
 }
