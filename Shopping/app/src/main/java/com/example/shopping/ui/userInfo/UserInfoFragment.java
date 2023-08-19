@@ -1,5 +1,7 @@
 package com.example.shopping.ui.userInfo;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,16 +22,25 @@ import com.example.shopping.databinding.FragmentUserInfoBinding;
 public class UserInfoFragment extends Fragment {
 
     private FragmentUserInfoBinding binding;
-
+    private SharedPreferences preferences;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        UserInfoViewModel userInfoViewModel =
-                new ViewModelProvider(this).get(UserInfoViewModel.class);
-
         binding = FragmentUserInfoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        Button bhome  = binding.bHome;
+
+        Button bhome = binding.bHome;
+        TextView uname = binding.unameUIP;
+        TextView uemail = binding.uemailUIP;
+
+        preferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        String userEmail = preferences.getString("userEmail", "user@gamil.com"); // Provide a default value
+        String userName = preferences.getString("userName", "app user"); // Provide a default value
+
+        uname.setText(userName);
+        uemail.setText(userEmail);
+
         bhome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,8 +50,6 @@ public class UserInfoFragment extends Fragment {
         });
 
         return root;
-
-
     }
 
     @Override

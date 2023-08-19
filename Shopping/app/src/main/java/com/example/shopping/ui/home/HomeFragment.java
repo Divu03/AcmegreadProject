@@ -42,16 +42,24 @@ public class HomeFragment extends Fragment {
         productList.add(new Product(R.drawable.red_premium_pullover_hoodie, "Hoodie", "red,Game Over", 2499));
         productList.add(new Product(R.drawable.nevy_womans_classic_t, "Woman Classic", "navy,Fire", 1199));
         productList.add(new Product(R.drawable.classic_long_sleev_t, "Long Sleeve Classic", "white,Fire", 1699));
-        // Add more products as needed
+        productList.add(new Product(R.drawable.book1, "The Girl in Room 105", "Chetan Bhagat", 169));
+        productList.add(new Product(R.drawable.book2, "Meluha", "Amish", 199));
+        productList.add(new Product(R.drawable.book3, "Harry Porter 1", "J.K.Rowling", 299));
+        productList.add(new Product(R.drawable.book4, "Ram", "Amish", 199));
+        productList.add(new Product(R.drawable.e1, "Galaxy s23 ultra", "samsung", 119699));
+        productList.add(new Product(R.drawable.e2, "Foldable 5", "samsung", 129699));
+        productList.add(new Product(R.drawable.e3, "VivoBook", "ASUS", 291699));
+        productList.add(new Product(R.drawable.e4, "Radio", "Retro", 591699));
+        productList.add(new Product(R.drawable.h1, "Fridge", "Harier", 1699));
+        productList.add(new Product(R.drawable.h2, "Fan", "Rupa", 99));
+
 
         ProductAdapter productAdapter = new ProductAdapter(requireContext(), productList, cartViewModel);
         productListView.setAdapter(productAdapter);
 
         productListView.setOnItemClickListener((parent, view, position, id) -> {
             Product selectedProduct = productList.get(position);
-            // Add the selected product to the cart using CartViewModel
             cartViewModel.addToCart(selectedProduct);
-            // Show a toast indicating successful addition to cart
             Toast.makeText(requireContext(), "Added to cart", Toast.LENGTH_SHORT).show();
         });
 

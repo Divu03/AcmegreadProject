@@ -37,18 +37,19 @@ public class CartFragment extends Fragment {
         CartProductAdapter cartAdapter = new CartProductAdapter(requireContext(), cartItems);
         cartListView.setAdapter(cartAdapter);
 
-        // Handle the "Order" button click
         binding.orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Clear the cart using the ViewModel
-                cartViewModel.clearCart();
-                cartAdapter.notifyDataSetChanged();
-                // Show a toast indicating that the order has been placed
-                Toast.makeText(requireContext(), "Order placed", Toast.LENGTH_SHORT).show();
+                List<Product> cartItems = cartViewModel.getCartItems().getValue();
 
-                // Navigate to the home fragment (replace this with your navigation logic)
-                getParentFragmentManager().popBackStack(); // This will pop the current fragment
+                if (cartItems == null || cartItems.isEmpty()) {
+                    Toast.makeText(requireContext(), "Nothing to Order", Toast.LENGTH_SHORT).show();
+                } else {
+                    cartViewModel.clearCart();
+                    cartAdapter.notifyDataSetChanged();
+                    Toast.makeText(requireContext(), "Order placed", Toast.LENGTH_SHORT).show();
+                    getParentFragmentManager().popBackStack(); // This will pop the current fragment
+                }
             }
         });
 

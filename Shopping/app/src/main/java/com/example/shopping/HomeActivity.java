@@ -1,7 +1,9 @@
 package com.example.shopping;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
@@ -57,22 +59,33 @@ public class HomeActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-//        DatabaseHelper db = new DatabaseHelper(HomeActivity.this);
-//
-//        String emailGet = getIntent().getStringExtra("Email");
-//        user = db.getUser(emailGet);
-//
-//        TextView emailH = findViewById(R.id.emailHeader);
-//        TextView nameH = findViewById(R.id.usernameHeader);
-//
-//        if (user != null ) {
-//            emailH.setText(user.getEmail());
-//            nameH.setText(user.getName());
-//        } else {
-//            emailH.setText("User not found");
-//            nameH.setText("Unknown User");
-//        }
-//        db.close();
+        DatabaseHelper db = new DatabaseHelper(HomeActivity.this);
+
+        String emailGet = getIntent().getStringExtra("Email");
+        user = db.getUser(emailGet);
+
+        TextView emailH = navigationView.getHeaderView(0).findViewById(R.id.emailHeader);
+        TextView nameH = navigationView.getHeaderView(0).findViewById(R.id.usernameHeader);
+
+        SharedPreferences preferences = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        if (user != null) {
+            emailH.setText(user.getEmail());
+            nameH.setText(user.getName());
+            editor.putString("userEmail", user.getEmail());
+            editor.putString("userName", user.getName());
+            editor.apply();
+        } else {
+            emailH.setText("User not found");
+            nameH.setText("Unknown User");
+            editor.putString("userEmail", "User not found");
+            editor.putString("userName", "Unknown User");
+            editor.apply();
+        }
+
+        db.close();
+
     }
 
     @Override
