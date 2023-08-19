@@ -17,9 +17,9 @@ import com.example.shopping.ui.cart.CartViewModel;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
-    private Context context;
-    private List<Product> productList;
-    private CartViewModel cartViewModel;
+    private final Context context;
+    private final List<Product> productList;
+    private final CartViewModel cartViewModel;
 
     public ProductAdapter(Context context, List<Product> productList, CartViewModel cartViewModel) {
         this.context = context;
@@ -45,24 +45,33 @@ public class ProductAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(context).inflate(R.layout.list_item_product, parent, false);
+        ViewHolder viewHolder;
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.list_item_product, parent, false);
+
+            viewHolder = new ViewHolder();
+            viewHolder.productImage = convertView.findViewById(R.id.product_image);
+            viewHolder.productName = convertView.findViewById(R.id.product_name);
+            viewHolder.productDescription = convertView.findViewById(R.id.product_description);
+            viewHolder.productPrice = convertView.findViewById(R.id.product_price);
+            viewHolder.addToCart = convertView.findViewById(R.id.add_to_cart);
+
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
 
         Product product = productList.get(position);
 
-        ImageView productImage = convertView.findViewById(R.id.product_image);
-        TextView productName = convertView.findViewById(R.id.product_name);
-        TextView productDescription = convertView.findViewById(R.id.product_description);
-        TextView productPrice = convertView.findViewById(R.id.product_price);
-        ImageView addToCart = convertView.findViewById(R.id.add_to_cart);
+        viewHolder.productImage.setImageResource(product.getImageResource());
+        viewHolder.productName.setText(product.getName());
+        viewHolder.productDescription.setText(product.getDescription());
+        viewHolder.productPrice.setText("Price: ₹" + product.getPrice());
 
-        productImage.setImageResource(product.getImageResource());
-        productName.setText(product.getName());
-        productDescription.setText(product.getDescription());
-        productPrice.setText("Price: ₹" + product.getPrice());
+        viewHolder.addToCart.setBackgroundResource(R.drawable.selector_cart);
 
-        addToCart.setBackgroundResource(R.drawable.selector_cart);
-
-        addToCart.setOnClickListener(new View.OnClickListener() {
+        viewHolder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!product.isInCart()) {
@@ -70,6 +79,8 @@ public class ProductAdapter extends BaseAdapter {
                     product.setInCart(true);
                     notifyDataSetChanged();
                     Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show();
+                    viewHolder.addToCart.setImageResource(R.drawable.ic_cart_added);
+                    viewHolder.addToCart.invalidate();
                 } else {
                     Toast.makeText(context, "Already in cart", Toast.LENGTH_SHORT).show();
                 }
@@ -78,5 +89,14 @@ public class ProductAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+    private static class ViewHolder {
+        ImageView productImage;
+        TextView productName;
+        TextView productDescription;
+        TextView productPrice;
+        ImageView addToCart;
+    }
+
 
 }
