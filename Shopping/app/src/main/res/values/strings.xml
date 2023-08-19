@@ -17,6 +17,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="uaddress">A/1, Android Street, NYC</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -24,4 +25,10 @@
     <string name="menu_acInfo">Account</string>
     <string name="menu_cart">Cart</string>
     <string name="menu_signout">Sign Out</string>
+    <string name="homeb">Back To Home</string>
+    <string name="address">Address</string>
+    <string name="mobilenum">1111111111</string>
+    <string name="mobile">Mobile</string>
+    <string name="uname">App User</string>
+    <string name="acInfo">Account Info</string>
 </resources>

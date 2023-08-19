@@ -4,19 +4,200 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.userInfo.UserInfoFragment">
+    tools:context=".ui.userInfo.UserInfoFragment"
+    android:background="@color/gold">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="135dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="568dp"
+        android:layout_marginEnd="155dp"
+        android:backgroundTint="@color/blood_red"
+        android:text="@string/homeb"
+        android:textColor="@color/gold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
+        android:id="@+id/umobileUIP"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/mobilenum"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/uaddressUIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/uaddress"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameUIP"
+        style="@style/CustomTextViewStyle"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/ename"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/unameUIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/uname"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/uemailUIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="50dp"
+        android:text="user@gmail.com"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emailUIP"
+        style="@style/CustomTextViewStyle"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/eemail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/addImgUIP"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="476dp"
+        android:src="@drawable/ic_home"
+        app:layout_constraintEnd_toStartOf="@+id/uaddressUIP"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_mail"
+        app:layout_constraintEnd_toStartOf="@+id/uemailUIP"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mobileUIP"
+        style="@style/CustomTextViewStyle"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/mobile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="42dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintEnd_toStartOf="@+id/unameUIP"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/acInfoUIP"
+        style="@style/CustomTextViewStyle"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/acInfo"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addressUIP"
+        style="@style/CustomTextViewStyle"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="476dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="356dp"
+        android:src="@drawable/ic_mobile"
+        app:layout_constraintEnd_toStartOf="@+id/umobileUIP"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

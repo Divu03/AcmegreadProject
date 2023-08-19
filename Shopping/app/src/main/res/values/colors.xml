@@ -19,4 +19,6 @@
     <color name="violet">#FF7921B1</color>
     <color name="lightviolet">#9B68BC</color>
     <color name="background_final">#60CBC3</color>
+    <color name="blood_red">#660000</color>
+    <color name="gold">#FFD700</color>
 </resources>
