@@ -22,4 +22,9 @@
         android:name="com.example.shopping.ui.cart.CartFragment"
         android:label="@string/menu_cart"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/signout"
+        android:name="com.example.shopping.SignOutFragment"
+        android:label="@string/menu_signout"
+        tools:layout="@layout/fragment_sign_out" />
 </navigation>

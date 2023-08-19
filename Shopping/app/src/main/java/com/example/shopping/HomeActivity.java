@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.widget.TextView;
@@ -51,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
         toggle.syncState();
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_account, R.id.nav_cart)
+                R.id.nav_home, R.id.nav_account, R.id.nav_cart, R.id.signout)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -100,6 +101,7 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -111,15 +113,15 @@ public class HomeActivity extends AppCompatActivity {
             navController.navigate(R.id.nav_account);
         } else if (id == R.id.nav_cart) {
             navController.navigate(R.id.nav_cart);
-        } else if (id == R.id.signout) {
-            Toast.makeText(HomeActivity.this, "Signing out...", Toast.LENGTH_SHORT).show();
-            Intent loIntent = new Intent(HomeActivity.this, MainActivity.class);
-            loIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(loIntent);
+        }else if (id == R.id.signout) {
+            navController.navigate(R.id.nav_cart);
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
+
+
 }
