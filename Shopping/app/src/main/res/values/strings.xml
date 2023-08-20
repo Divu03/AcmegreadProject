@@ -37,6 +37,7 @@
     <string name="price">Price 10</string>
     <string name="remove">Remove</string>
     <string name="order">Order</string>
+    <string name="hi">HI</string>
     <string name="YourAddedItem">Your Added Item</string>
     <string name="price_format">Price: ₹%.2f</string>
 
