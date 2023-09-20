@@ -63,7 +63,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emaill"
-        android:layout_width="405dp"
+        android:layout_width="match_parent"
         android:layout_height="69dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="322dp"
@@ -86,7 +86,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passl"
-        android:layout_width="405dp"
+        android:layout_width="match_parent"
         android:layout_height="73dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="400dp"
